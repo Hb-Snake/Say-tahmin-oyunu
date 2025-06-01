@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sayı Tahmin Oyunu</title>
+</head>
+<body style="text-align: center; color: white; background-color: rgb(1, 1, 81);">
+    <div id="aralıkSeçimi">
+        <h2 style="color: white;">Aralık Seç</h2>
+        <select id="aralık">
+            <option value="10">1-10</option>
+            <option value="50">1-50</option>
+            <option value="100">1-100</option>
+        </select>
+        <h2 style="color: white;">Kaç Hakkın Olacağını seç</h2>
+        <select id="hak">
+            <option value="5">5 Hak</option>
+            <option value="8">8 Hak</option>
+            <option value="10">10 Hak</option>
+            <option value="15">15 Hak</option>
+        </select>
+        <h2 style="color: white;">İsminizi giriniz</h2>
+        <input type="text" id="isim">
+        <br>
+        <button onclick="başla()">Başla</button>
+    </div>
+    <div id="oyun" style="display:none;" >
+        <H1 id="skor" style="color: white;"> Skor: 0</H1>
+        <h1 id="highScore" style="color: white;"><big>EN İyi Skor: -</big></h1>
+        <p style="color: white;">1 ile <span id="maxSayı"></span> arasında bir sayı gir:</p>
+        <input type="number" id="sayı" />
+        <button onclick="tahminEt()" id="tahmin">Tahmin Et</button>
+        <button onclick="yenidenDene()" id="yeniden" style="display: none" >Yeniden Dene</button>
+        <button onclick="yenidenBaşla()" id="tekrar" style="display: none;">Yeniden Başla</button> <button onclick="başaDön()" id="baş">Başa Dön</button>
+        <h4 style="color: white;" id="ipucu"></h4>
+        <p id="kalanHak" style="color: white;"></p>
+        <h1 id="uyarı" style="color: white;"></h1>
+        <p id="tahminSayısı" style="color: white;">Tahmin Sayın: 0</p>
+        <h2 id="sonuç" style="color: white;"></h2>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div style="color: white;">
+        <H1> Oyun Kuralları </H1>
+        <p>Bilmek 10 puan</p>
+        <p>Tekte bilmek 20 puan</p>
+        <p>Yanlış bilmek -2 puan</p>
+        <p>Kaybetmek -5 puan</p>
+        <p>Ne kadar hakkın kalırsa o kakar ekstra puan</p>
+    </div>
+
+
+    <audio id="dogru" src="correct-6033.mp3"></audio>
+    <audio id="yanlis" src="wrong-47985.mp3"></audio>
+    <script src="script.js">
+    </script>
+</body>
+</html>
